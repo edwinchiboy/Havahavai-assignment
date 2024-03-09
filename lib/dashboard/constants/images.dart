@@ -10,7 +10,7 @@ class DashBoardImages {
   static const String careem = 'assets/images/careem.png';
   static const String cloud = 'assets/images/cloud.svg';
   static const String currency = 'assets/images/currency.svg';
-  static const String directionRight = 'assets/images/direction_right.svg';
+  static const String directionRight = 'assets/images/get_direction_right.svg';
   static const String downArrow = 'assets/images/down_arrow.svg';
   static const String map = 'assets/images/map.png';
   static const String metro = 'assets/images/metro.svg';
@@ -18,4 +18,5 @@ class DashBoardImages {
   static const String twoWeeler = 'assets/images/two_weeler.svg';
   static const String uber = 'assets/images/uber.png';
   static const String yango = 'assets/images/yango.png';
+  static const String dubia ='assets/images/dubia.png';
 }

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 
 import '../../common_data/constants/havahavai_strings.dart';
 import '../../commons/components/cards/havahavai_card.dart';
+import '../../commons/theme/typography.dart';
 import '../../commons/widgets/image_renderer.dart';
 import '../constants/images.dart';
+import '../widgets/detail_card.dart';
+import '../widgets/header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: widget.backgroundColor,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
           child: StretchingOverscrollIndicator(
@@ -25,63 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(HavahavaiString.dubiaAirport),
-              const Row(
-                children: [
-                  Text("${HavahavaiString.dubia} ."),
-                  Text("🇦🇪 ${HavahavaiString.unitedAE}"),
-                ],
-              ),
-              Container(
-                height: 300,
-                child: HavahavaiCard(
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Column(
-                              children: [
-                                ImageRenderer(
-                                  url: DashBoardImages.cloud,
-                                ),
-                                Text("19 C"),
-                                Text("Cloudy"),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      const Divider(),
-                      Container(
-                        height: 100,
-                        padding: EdgeInsets.symmetric(
-                            vertical: 8.h, horizontal: 20.w),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ImageRenderer(
-                              url: DashBoardImages.directionRight,
-                            ),
-                            Text(HavahavaiString.getDirection),
-                            VerticalDivider(
-                              color: Colors.black,
-                              // Set the color of the line
-                              thickness: 2.0, // Set the thickness of the line
-                            ),
-                            ImageRenderer(
-                              url: DashBoardImages.callBlue,
-                            ),
-                            Text(HavahavaiString.callAirport),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              const Header(),
+              const DetailCard(),
               const Text("Tab bar"),
               HavahavaiCard(
                 height: 300,
@@ -271,26 +221,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-
-              Row(children: [GestureDetector(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.all(8.r),
-                  margin: EdgeInsets.symmetric(
-                      vertical: 10.h, horizontal: 4.w),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    border: Border.all(
-                      width: 1.r,
-                      color: Colors.amber,
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.all(8.r),
+                      margin:
+                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 4.w),
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        border: Border.all(
+                          width: 1.r,
+                          color: Colors.amber,
+                        ),
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      child: const Text(
+                        "T1",
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(10.r),
                   ),
-                  child: const Text(
-                    "T1",
-                  ),
-                ),
-              ),],)
+                ],
+              )
             ],
           ),
         ),

@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ZillaTypography {
+class HavahavaiTypography {
   static const appleEmojiFontFamily = 'AppleEmoji';
   static const uberMoveFontFamily = 'UberMove';
 
   // headline styles
 
-  static TextStyle heading1Style = TextStyle(
+  static TextStyle heading1Style = const TextStyle(
       fontFamily: uberMoveFontFamily,
-      fontSize: 20.sp,
+      fontSize: 20,
       fontWeight: FontWeight.w700);
 
-  static TextStyle? heading2Style = TextStyle(
+  static TextStyle heading2Style = const TextStyle(
       fontFamily: uberMoveFontFamily,
-      fontSize: 16.sp,
+      fontSize: 16,
       fontWeight: FontWeight.w700);
 
-  static TextStyle? heading3Style = TextStyle(
+  static TextStyle heading3Style = TextStyle(
       fontFamily: uberMoveFontFamily,
       fontSize: 16.sp,
       fontWeight: FontWeight.w400);
 
-  static TextStyle? heading4Style = TextStyle(
+  static TextStyle heading4Style = TextStyle(
       fontFamily: uberMoveFontFamily,
       fontSize: 14.sp,
       fontWeight: FontWeight.w400);
