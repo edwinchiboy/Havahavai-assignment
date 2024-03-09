@@ -19,4 +19,5 @@ class DashBoardImages {
   static const String uber = 'assets/images/uber.png';
   static const String yango = 'assets/images/yango.png';
   static const String dubia ='assets/images/dubia.png';
+  static const String blackLane = "assets/images/black_lane.png";
 }

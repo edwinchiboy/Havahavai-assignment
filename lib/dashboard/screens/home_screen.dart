@@ -5,10 +5,13 @@ import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import '../../common_data/constants/havahavai_strings.dart';
 import '../../commons/components/cards/havahavai_card.dart';
 import '../../commons/theme/typography.dart';
+import '../../commons/widgets/getsture_detector.dart';
 import '../../commons/widgets/image_renderer.dart';
 import '../constants/images.dart';
 import '../widgets/detail_card.dart';
 import '../widgets/header.dart';
+import '../widgets/public_transport_card.dart';
+import '../widgets/taxi_service_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +21,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<String> navTexts = [
+    HavahavaiString.transport,
+    HavahavaiString.terminal,
+    HavahavaiString.forex,
+    HavahavaiString.contactInfo
+  ];
+  int activeNavIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,58 +43,41 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const Header(),
               const DetailCard(),
-              const Text("Tab bar"),
-              HavahavaiCard(
-                height: 300,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(HavahavaiString.taxiService),
-                    Expanded(
-                      child: GridView.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                          ),
-                          itemCount: 4,
-                          itemBuilder: (BuildContext context, int index) {
-                            return const HavahavaiCard(
-                              child: Column(
-                                children: [Text("Uber"), Text("Dollars")],
-                              ),
-                            );
-                          }),
-                    ),
-                  ],
+              SizedBox(height: 20.h),
+              Wrap(
+                spacing: 12.r,
+                // Adjust spacing as needed (in logical pixels)
+                children: List.generate(
+                  navTexts.length,
+                  (index) => HavahavaiGestureDetector(
+                    height: 36.h,
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
+                    activeColor: context.havahavaiColorScheme?.black1,
+                    inactiveColor: context.havahavaiColorScheme?.grey03,
+                    borderColor: context.havahavaiColorScheme?.grey03,
+                    active: activeNavIndex == index,
+                    borderWidth: 1.r,
+                    radius: 18.r,
+                    onTap: () {
+                      setState(() {
+                        activeNavIndex = index;
+                      });
+                    },
+                    child: Text(navTexts[index],
+                        style: HavahavaiTypography.subheading1Style.copyWith(
+                            color: Theme.of(context).colorScheme.secondary)),
+                  ),
                 ),
               ),
+              SizedBox(height: 20.h),
+              const TaxiServiceCard(),
+              SizedBox(height: 20.h),
+              const PublicTransportCard(),
+              SizedBox(height: 20.h),
+
               HavahavaiCard(
-                height: 200,
-                child: Column(
-                  children: [
-                    const Text(HavahavaiString.publicTransport),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    const Row(
-                      children: [
-                        ImageRenderer(
-                          url: DashBoardImages.metro,
-                        ),
-                        Text(HavahavaiString.metro),
-                        Spacer(),
-                        Text("6am-10pm"),
-                        ImageRenderer(
-                          url: DashBoardImages.arrowRight,
-                        ),
-                      ],
-                    ),
-                    const Divider()
-                  ],
-                ),
-              ),
-              HavahavaiCard(
-                height: 400,
+                height: 234.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -121,8 +115,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: 20.h),
+
               HavahavaiCard(
-                height: 300,
+                height: 214.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -182,8 +178,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              const HavahavaiCard(
-                height: 300,
+              SizedBox(height: 20.h),
+
+               HavahavaiCard(
+                height: 265.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -204,7 +202,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: 20.h),
+
               HavahavaiCard(
+                height: 295.h,
                 child: Column(
                   children: [
                     const Text(HavahavaiString.contactAirport),

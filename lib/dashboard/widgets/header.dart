@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
       children: [
         SizedBox(height: 16.h),
         Text(HavahavaiString.dubiaAirport,
-            style: HavahavaiTypography.heading1Style),
+            style: HavahavaiTypography.heading1Style.copyWith(color: context.havahavaiColorScheme?.black1)),
         SizedBox(height: 8.h),
         Row(
           children: [

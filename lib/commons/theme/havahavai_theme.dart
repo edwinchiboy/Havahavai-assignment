@@ -3,8 +3,6 @@ import 'package:havahavai_assignment/commons/theme/typography.dart';
 
 import 'havahavai_colors.dart';
 import 'havahavai_colour_scheme.dart';
-import 'havahavai_colour_scheme.dart';
-import 'havahavia_text_theme.dart';
 import 'havahavia_text_theme.dart';
 
 ThemeData havahavaiTheme() {
@@ -17,8 +15,8 @@ ThemeData havahavaiTheme() {
         brightness: Brightness.light,
         primary: HavahavaiColors.primary,
         onPrimary: HavahavaiColors.primary,
-        secondary: HavahavaiColors.primary,
-        onSecondary: HavahavaiColors.primary,
+        secondary: HavahavaiColors.secondary,
+        onSecondary: HavahavaiColors.secondary,
         tertiary: HavahavaiColors.primary,
         onTertiary: HavahavaiColors.primary,
         error: HavahavaiColors.primary,
