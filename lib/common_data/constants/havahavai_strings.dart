@@ -1,4 +1,4 @@
-class HavahavaiStrin {
+class HavahavaiString {
   static const String dubiaAirport = "Dubia Airport - DXB";
   static const String dubia = "Dubia";
   static const String unitedAE = "United Arab Emirates";
@@ -16,4 +16,12 @@ class HavahavaiStrin {
   static const String contactAirport = "Contact Airport";
   static const String lostAndFound = "Lost and found";
   static const String headOffice = "Head office";
+  static const String metro = "Metro";
+  static const String bus = "Bus";
+  static const String police = "Police";
+  static const String twoWheeler = "Two wheeler";
+  static const String carParking = "Car parking";
+  static const String electricCarParking = "Electric car parking";
+
+
 }
