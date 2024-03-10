@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import 'package:havahavai_assignment/common_data/constants/havahavai_strings.dart';
-import 'package:havahavai_assignment/commons/theme/typography.dart';
 import 'package:havahavai_assignment/commons/widgets/getsture_detector.dart';
 import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
 import 'package:havahavai_assignment/dashboard/constants/images.dart';
@@ -15,7 +14,6 @@ import 'package:havahavai_assignment/dashboard/widgets/self_parking_card.dart';
 import 'package:havahavai_assignment/dashboard/widgets/taxi_service_card.dart';
 import 'package:havahavai_assignment/dashboard/widgets/terminal_map_card.dart';
 
-import '../../commons/theme/havahavai_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

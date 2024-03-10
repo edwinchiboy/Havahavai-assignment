@@ -10,6 +10,7 @@ class HavahavaiTextTheme extends ThemeExtension<HavahavaiTextTheme> {
       required this.subheading1,
       required this.subheading2,
       required this.body1,
+      required this.body2,
       required this.others});
 
   final TextStyle heading1;
@@ -19,6 +20,8 @@ class HavahavaiTextTheme extends ThemeExtension<HavahavaiTextTheme> {
   final TextStyle subheading1;
   final TextStyle subheading2;
   final TextStyle body1;
+  final TextStyle body2;
+
   final TextStyle others;
 
   @override
@@ -30,15 +33,17 @@ class HavahavaiTextTheme extends ThemeExtension<HavahavaiTextTheme> {
           TextStyle? subheading1Style,
           TextStyle? subheading2Style,
           TextStyle? body1Style,
+          TextStyle? body2Style,
           TextStyle? others}) =>
       HavahavaiTextTheme(
-        heading1: heading1Style ?? this.heading1,
-        heading2: heading2Style ?? this.heading1,
-        heading3: heading3Style ?? this.heading3,
-        heading4: heading4Style ?? this.heading4,
-        subheading1: subheading1Style ?? this.subheading1,
-        subheading2: subheading2Style ?? this.subheading2,
-        body1: body1Style ?? this.body1,
+        heading1: heading1Style ?? heading1,
+        heading2: heading2Style ?? heading1,
+        heading3: heading3Style ?? heading3,
+        heading4: heading4Style ?? heading4,
+        subheading1: subheading1Style ?? subheading1,
+        subheading2: subheading2Style ?? subheading2,
+        body1: body1Style ?? body1,
+        body2: body2Style ?? body2,
         others: others ?? this.others,
       );
 
@@ -63,10 +68,10 @@ class HavahavaiTextTheme extends ThemeExtension<HavahavaiTextTheme> {
           HavahavaiTypography.subheading2Style,
       body1: TextStyle.lerp(body1, other.body1, t) ??
           HavahavaiTypography.body1Style,
+      body2: TextStyle.lerp(body2, other.body2, t) ??
+          HavahavaiTypography.body2Style,
       others:
           TextStyle.lerp(others, other.others, t) ?? HavahavaiTypography.others,
     );
   }
-
-
 }

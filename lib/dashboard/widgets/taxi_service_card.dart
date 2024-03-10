@@ -4,7 +4,6 @@ import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import 'package:havahavai_assignment/common_data/constants/havahavai_strings.dart';
 import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_colors.dart';
-import 'package:havahavai_assignment/commons/theme/typography.dart';
 import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
 import 'package:havahavai_assignment/dashboard/constants/images.dart';
 
@@ -64,11 +63,11 @@ class TaxiServiceCard extends StatelessWidget {
                                       bottomLeft: Radius.circular(4.r),
                                       bottomRight: Radius.circular(4.r)),
                                 ),
-                                // child: Center(
-                                //     child: Text("Luxury",
-                                //         style: context.havahavaiTextTheme?.body2
-                                //             .copyWith(
-                                //                 color: HavahavaiColors.gold))),
+                                child: Center(
+                                    child: Text("Luxury",
+                                        style: context.havahavaiTextTheme?.body2
+                                            .copyWith(
+                                                color: HavahavaiColors.gold))),
                               ),
                               SizedBox(height: 12.h)
                             ]),

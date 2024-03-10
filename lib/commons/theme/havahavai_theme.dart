@@ -54,6 +54,7 @@ ThemeData havahavaiTheme() {
           subheading1: HavahavaiTypography.subheading1Style,
           subheading2: HavahavaiTypography.subheading2Style,
           body1: HavahavaiTypography.body1Style,
+          body2: HavahavaiTypography.body2Style,
           others: HavahavaiTypography.others),
     ],
   );
@@ -110,6 +111,7 @@ ThemeData havahavaiDarkTheme() {
           subheading1: HavahavaiTypography.subheading1Style,
           subheading2: HavahavaiTypography.subheading2Style,
           body1: HavahavaiTypography.body1Style,
+          body2: HavahavaiTypography.body2Style,
           others: HavahavaiTypography.others),
     ],
   );
