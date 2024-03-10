@@ -15,7 +15,7 @@ class HavahavaiGestureDetector extends StatelessWidget {
   final double? height;
 
   const HavahavaiGestureDetector({
-    this.active = false,
+    required this.active,
     super.key,
     required this.child,
     this.padding = const EdgeInsets.all(16.0),

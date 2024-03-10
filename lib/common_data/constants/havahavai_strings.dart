@@ -22,6 +22,8 @@ class HavahavaiString {
   static const String twoWheeler = "Two wheeler";
   static const String carParking = "Car parking";
   static const String electricCarParking = "Electric car parking";
+  static const String view = "View";
+
 
 
 }

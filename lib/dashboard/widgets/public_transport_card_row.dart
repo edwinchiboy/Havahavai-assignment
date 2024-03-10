@@ -22,9 +22,7 @@ class PublicTransportRow extends StatelessWidget {
     return Row(
       children: [
         ImageRenderer(height: 18.r, width: 16.r, url: imageUrl),
-        SizedBox(
-          width: 16.w,
-        ),
+        SizedBox(width: 16.w),
         Text(title,
             style: HavahavaiTypography.heading3Style
                 .copyWith(color: context.havahavaiColorScheme?.black1)),

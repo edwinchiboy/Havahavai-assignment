@@ -3,15 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 
 import '../../common_data/constants/havahavai_strings.dart';
-import '../../commons/components/cards/havahavai_card.dart';
 import '../../commons/theme/typography.dart';
 import '../../commons/widgets/getsture_detector.dart';
 import '../../commons/widgets/image_renderer.dart';
 import '../constants/images.dart';
+import '../widgets/contact_airport_card.dart';
 import '../widgets/detail_card.dart';
+import '../widgets/foreign_exchange_card.dart';
 import '../widgets/header.dart';
 import '../widgets/public_transport_card.dart';
+import '../widgets/self_parking_card.dart';
 import '../widgets/taxi_service_card.dart';
+import '../widgets/terminal_map_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HavahavaiString.contactInfo
   ];
   int activeNavIndex = 0;
+  bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -75,172 +79,57 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 20.h),
               const PublicTransportCard(),
               SizedBox(height: 20.h),
-
-              HavahavaiCard(
-                height: 234.h,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(HavahavaiString.selfparking),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.all(8.r),
-                        margin: EdgeInsets.symmetric(
-                            vertical: 10.h, horizontal: 4.w),
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          border: Border.all(
-                            width: 1.r,
-                            color: Colors.amber,
-                          ),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: const Text(
-                          "T1",
-                        ),
-                      ),
-                    ),
-                    const Row(
-                      children: [
-                        ImageRenderer(
-                          url: DashBoardImages.twoWeeler,
-                        ),
-                        Text(HavahavaiString.twoWheeler),
-                        Spacer(),
-                        Text("AED 50/ day"),
-                        Icon(Icons.info_outline, color: Colors.deepOrange),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              const SelfParkingCard(),
               SizedBox(height: 20.h),
-
-              HavahavaiCard(
-                height: 214.h,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(HavahavaiString.terminalMap),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.all(8.r),
-                        margin: EdgeInsets.symmetric(
-                            vertical: 10.h, horizontal: 4.w),
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          border: Border.all(
-                            width: 1.r,
-                            color: Colors.amber,
-                          ),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: const Text(
-                          "T1",
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          height: 40.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                            image: const DecorationImage(
-                              image: AssetImage(DashBoardImages.map),
-                              fit: BoxFit.fitWidth,
-                            ),
-                          ),
-                          child: Center(
-                            child: Container(
-                              width: 50.w,
-                              height: 50.h,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    width: 1.r,
-                                    color: Colors.amber,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.r)),
-                              child: Center(
-                                child: Text(
-                                  "View",
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              const TerminalMapCard(),
               SizedBox(height: 20.h),
-
-               HavahavaiCard(
-                height: 265.h,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(HavahavaiString.foreignExchange),
-                    Row(
-                      children: [
-                        Text("Travelex"),
-                        Spacer(),
-                        ImageRenderer(
-                          url: DashBoardImages.arrowUp,
-                        ),
-                      ],
-                    ),
-                    Text("Terminal 3-"),
-                    Text(
-                        "Terminal 3-Airside Dept Downtown, Concourse B,Terminal 3, beside Winston Smoking room"),
-                    Divider()
-                  ],
-                ),
-              ),
+              const ForeignExchangeCard(),
               SizedBox(height: 20.h),
-
-              HavahavaiCard(
-                height: 295.h,
-                child: Column(
-                  children: [
-                    const Text(HavahavaiString.contactAirport),
-                    Row(
-                      children: [
-                        const Text(HavahavaiString.police),
-                        Container(
-                          child: const ImageRenderer(
-                            url: DashBoardImages.arrowUp,
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              const ContactAirportCard(),
+              SizedBox(height: 40.h),
               Row(
                 children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(8.r),
-                      margin:
-                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 4.w),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        border: Border.all(
-                          width: 1.r,
-                          color: Colors.amber,
+                  HavahavaiGestureDetector(
+                    active: false,
+                    radius: 10.r,
+                    height: 48.h,
+                    padding: EdgeInsets.all(16.r),
+                    activeColor: context.havahavaiColorScheme?.black1,
+                    inactiveColor: context.havahavaiColorScheme?.black1,
+                    child: Row(
+                      children: [
+                        ImageRenderer(
+                          height: 18.w,
+                          width: 18.w,
+                          url: DashBoardImages.transparentRight,
                         ),
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                      child: const Text(
-                        "T1",
-                      ),
+                        SizedBox(width: 16.w),
+                        Text(HavahavaiString.getDirection,
+                            style: HavahavaiTypography.heading2Style.copyWith(
+                                color: Theme.of(context).colorScheme.secondary))
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 16.w),
+                  HavahavaiGestureDetector(
+                    active: false,
+                    radius: 10.r,
+                    height: 48.h,
+                    padding: EdgeInsets.all(16.r),
+                    activeColor: context.havahavaiColorScheme?.black1,
+                    inactiveColor: context.havahavaiColorScheme?.black1,
+                    child: Row(
+                      children: [
+                        ImageRenderer(
+                          height: 18.w,
+                          width: 18.w,
+                          url: DashBoardImages.transparentRight,
+                        ),
+                        SizedBox(width: 16.w),
+                        Text(HavahavaiString.getDirection,
+                            style: HavahavaiTypography.heading2Style.copyWith(
+                                color: Theme.of(context).colorScheme.secondary))
+                      ],
                     ),
                   ),
                 ],

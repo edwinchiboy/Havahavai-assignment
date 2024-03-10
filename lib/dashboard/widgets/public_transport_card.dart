@@ -13,28 +13,29 @@ class PublicTransportCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  HavahavaiCard(
+    return HavahavaiCard(
       height: 165.h,
       padding: EdgeInsets.all(16.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 8.h,
-          ),
+          SizedBox(height: 4.h),
           Text(HavahavaiString.publicTransport,
-              style: HavahavaiTypography.heading1Style.copyWith(
-                  color: context.havahavaiColorScheme?.black1)),
-          SizedBox(
-            height: 20.h
-          ),
-          const PublicTransportRow(imageUrl: DashBoardImages.metro, title: HavahavaiString.metro, time: "6am-10pm",),
-
+              style: HavahavaiTypography.heading1Style
+                  .copyWith(color: context.havahavaiColorScheme?.black1)),
+          SizedBox(height: 16.h),
+          const PublicTransportRow(
+              imageUrl: DashBoardImages.metro,
+              title: HavahavaiString.metro,
+              time: "6am-10pm"),
           SizedBox(height: 8.h),
           const Divider(),
           SizedBox(height: 8.h),
-          const PublicTransportRow(imageUrl: DashBoardImages.bus, title: HavahavaiString.bus, time: "available 24hrs",),
-
+          const PublicTransportRow(
+            imageUrl: DashBoardImages.bus,
+            title: HavahavaiString.bus,
+            time: "available 24hrs",
+          ),
         ],
       ),
     );
