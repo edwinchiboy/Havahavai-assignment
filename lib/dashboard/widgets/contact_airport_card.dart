@@ -12,27 +12,28 @@ class ContactAirportCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HavahavaiCard(
+        elevation: 2.r,
         child: IntrinsicHeight(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      SizedBox(height: 4.h),
-      Text(HavahavaiString.contactAirport,
-          style: HavahavaiTypography.heading1Style
-              .copyWith(color: context.havahavaiColorScheme?.black1)),
-      SizedBox(height: 16.h),
-      const ContactAirportCardRow(text: HavahavaiString.police),
-      SizedBox(height: 8.h),
-      const Divider(),
-      SizedBox(height: 8.h),
-      const ContactAirportCardRow(text: HavahavaiString.lostAndFound),
-      SizedBox(height: 8.h),
-      const Divider(),
-      SizedBox(height: 8.h),
-      const ContactAirportCardRow(text: HavahavaiString.transport),
-      SizedBox(height: 8.h),
-      const Divider(),
-      SizedBox(height: 8.h),
-      const ContactAirportCardRow(text: HavahavaiString.headOffice)
-    ])));
+          SizedBox(height: 4.h),
+          Text(HavahavaiString.contactAirport,
+              style: HavahavaiTypography.heading1Style
+                  .copyWith(color: context.havahavaiColorScheme?.black1)),
+          SizedBox(height: 16.h),
+          const ContactAirportCardRow(text: HavahavaiString.police),
+          SizedBox(height: 8.h),
+          const Divider(),
+          SizedBox(height: 8.h),
+          const ContactAirportCardRow(text: HavahavaiString.lostAndFound),
+          SizedBox(height: 8.h),
+          const Divider(),
+          SizedBox(height: 8.h),
+          const ContactAirportCardRow(text: HavahavaiString.transport),
+          SizedBox(height: 8.h),
+          const Divider(),
+          SizedBox(height: 8.h),
+          const ContactAirportCardRow(text: HavahavaiString.headOffice)
+        ])));
   }
 }

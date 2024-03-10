@@ -22,6 +22,8 @@ class _ForeignExchangeCardState extends State<ForeignExchangeCard> {
   @override
   Widget build(BuildContext context) {
     return HavahavaiCard(
+        elevation: 2.r,
+
         child: IntrinsicHeight(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

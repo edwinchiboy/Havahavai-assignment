@@ -6,12 +6,28 @@ import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dar
 import 'package:havahavai_assignment/commons/theme/typography.dart';
 import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
 import 'package:havahavai_assignment/dashboard/constants/images.dart';
+import 'package:havahavai_assignment/dashboard/models/DetailsModel.dart';
+import 'package:havahavai_assignment/dashboard/widgets/detils_card_colum.dart';
 
 class DetailCard extends StatelessWidget {
   const DetailCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<DetailsModel> details = [
+      DetailsModel(
+          imageUrl: DashBoardImages.cloud, title: "19 C", subTitle: "Cloudy"),
+      DetailsModel(
+          imageUrl: DashBoardImages.calendar, title: "30 Jan", subTitle: "Mon"),
+      DetailsModel(
+          imageUrl: DashBoardImages.time,
+          title: "8:45 PM",
+          subTitle: "GMT + 4"),
+      DetailsModel(
+          imageUrl: DashBoardImages.currency,
+          title: "AED",
+          subTitle: "1\$ = 367AED")
+    ];
     return Container(
         margin: EdgeInsets.symmetric(vertical: 16.h),
         height: 285.h,
@@ -32,25 +48,17 @@ class DetailCard extends StatelessWidget {
                     child: Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: 10.h, horizontal: 16.w),
-                        child: Row(children: [
-                          Column(children: [
-                            ImageRenderer(
-                                height: 16.r,
-                                width: 16.r,
-                                url: DashBoardImages.cloud),
-                            SizedBox(height: 4.h),
-                            Text("19 C",
-                                style: HavahavaiTypography.heading3Style
-                                    .copyWith(
-                                        color: context
-                                            .havahavaiColorScheme?.black1)),
-                            SizedBox(height: 4.h),
-                            Text("Cloudy",
-                                style: HavahavaiTypography.body1Style.copyWith(
-                                    color:
-                                        context.havahavaiColorScheme?.grey02)),
-                          ])
-                        ]))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: List.generate(
+                            details.length,
+                            (index) => DetailsCardColumn(
+                              imageUrl: details[index].imageUrl ?? "",
+                              title: details[index].title ?? "",
+                              subTitle: details[index].subTitle ?? "",
+                            ),
+                          ),
+                        ))),
                 const Divider(),
                 Flexible(
                     flex: 1,

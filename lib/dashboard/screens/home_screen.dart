@@ -49,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(height: 20.h),
                         Wrap(
                             spacing: 12.r,
-                            // Adjust spacing as needed (in logical pixels)
                             children: List.generate(
                                 navTexts.length,
                                 (index) => HavahavaiGestureDetector(

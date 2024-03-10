@@ -15,6 +15,7 @@ class TerminalMapCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return HavahavaiCard(
         height: 214.h,
+        elevation: 2.r,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 4.h),
           Text(HavahavaiString.terminalMap,

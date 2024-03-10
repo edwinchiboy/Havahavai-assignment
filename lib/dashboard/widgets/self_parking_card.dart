@@ -7,14 +7,30 @@ import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dar
 import 'package:havahavai_assignment/commons/theme/typography.dart';
 import 'package:havahavai_assignment/commons/widgets/getsture_detector.dart';
 import 'package:havahavai_assignment/dashboard/constants/images.dart';
+import 'package:havahavai_assignment/dashboard/models/DetailsModel.dart';
 
 class SelfParkingCard extends StatelessWidget {
   const SelfParkingCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<DetailsModel> details = [
+      DetailsModel(
+          imageUrl: DashBoardImages.twoWeeler,
+          title: HavahavaiString.twoWheeler,
+          subTitle: "AED 50/ day"),
+      DetailsModel(
+          imageUrl: DashBoardImages.car,
+          title: HavahavaiString.carParking,
+          subTitle: "AED 100/ day"),
+      DetailsModel(
+          imageUrl: DashBoardImages.electricCar,
+          title: HavahavaiString.electricCarParking,
+          subTitle: "AED 100/ day"),
+    ];
     return HavahavaiCard(
         height: 234.h,
+        elevation: 2.r,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 4.h),
           Text(HavahavaiString.selfparking,
@@ -43,20 +59,18 @@ class SelfParkingCard extends StatelessWidget {
                         color: Theme.of(context).colorScheme.secondary)))
           ]),
           SizedBox(height: 16.h),
-          const SelfParkingRow(
-              imageUrl: DashBoardImages.twoWeeler,
-              title: HavahavaiString.twoWheeler,
-              charge: "AED 50/ day"),
-          SizedBox(height: 16.h),
-          const SelfParkingRow(
-              imageUrl: DashBoardImages.car,
-              title: HavahavaiString.carParking,
-              charge: "AED 100/ day"),
-          SizedBox(height: 16.h),
-          const SelfParkingRow(
-              imageUrl: DashBoardImages.electricCar,
-              title: HavahavaiString.electricCarParking,
-              charge: "AED 100/ day")
+          Expanded(
+              child: ListView.builder(
+                  itemCount: details.length,
+                  itemBuilder: (context, index) {
+                    return Column(children: [
+                      SelfParkingRow(
+                          imageUrl: details[index].imageUrl ?? "",
+                          title: details[index].title ?? "",
+                          charge: details[index].subTitle ?? ""),
+                      if (index != details.length - 1) SizedBox(height: 16.h),
+                    ]); // Replace with your widget builder logic
+                  }))
         ]));
   }
 }
