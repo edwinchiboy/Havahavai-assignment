@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import 'package:havahavai_assignment/dashboard/screens/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(milliseconds: 300));
   runApp(const MyApp());
 }
 
@@ -28,6 +30,3 @@ class MyApp extends StatelessWidget {
         });
   }
 }
-
-
-
