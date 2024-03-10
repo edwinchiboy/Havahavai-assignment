@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'commons/theme/havahavai_theme.dart';
 import 'dashboard/screens/home_screen.dart';
 
 void main() {
@@ -29,7 +30,5 @@ class MyApp extends StatelessWidget {
   }
 }
 
-havahavaiDarkTheme() {}
 
-havahavaiTheme() {}
 
