@@ -46,6 +46,11 @@ class HavahavaiTypography {
       fontSize: 11.sp,
       fontWeight: FontWeight.w400);
 
+  static TextStyle body2Style = TextStyle(
+      fontFamily: uberMoveFontFamily,
+      fontSize: 10.sp,
+      fontWeight: FontWeight.w700);
+
   // others
   static TextStyle others = const TextStyle(
       letterSpacing: 0.5,

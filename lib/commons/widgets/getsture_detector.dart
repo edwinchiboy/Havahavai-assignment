@@ -24,7 +24,7 @@ class HavahavaiGestureDetector extends StatelessWidget {
     required this.inactiveColor,
     this.borderColor = Colors.black12,
     this.onTap,
-    this.borderWidth = 1.0,
+    this.borderWidth = 0.0,
     this.radius = 8.0,
   });
 
@@ -41,7 +41,7 @@ class HavahavaiGestureDetector extends StatelessWidget {
                         color: active ? activeColor : inactiveColor,
                         border: Border.all(
                             width: borderWidth,
-                            color: borderColor ?? HavahavaiColors.black1),
+                            color: borderColor ?? HavahavaiColors.secondary),
                         borderRadius: BorderRadius.circular(radius)),
                     child: Center(child: child)))));
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
-
 import 'package:havahavai_assignment/commons/theme/typography.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_colors.dart';
 
 class ForeignExchangeColumn extends StatelessWidget {
   final String text1;
@@ -15,10 +14,10 @@ class ForeignExchangeColumn extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(text1,
           style: HavahavaiTypography.subheading1Style
-              .copyWith(color: context.havahavaiColorScheme?.grey02)),
+              .copyWith(color: HavahavaiColors.grey02)),
       Text(text2,
           style: HavahavaiTypography.subheading1Style
-              .copyWith(color: context.havahavaiColorScheme?.grey02))
+              .copyWith(color: HavahavaiColors.grey02))
     ]);
   }
 }

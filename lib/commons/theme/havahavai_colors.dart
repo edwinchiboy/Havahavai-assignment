@@ -9,4 +9,5 @@ class HavahavaiColors {
   static const Color grey02 = Color(0xff909090);
   static const Color grey03 = Color(0xffEEEEEE);
   static const Color grey04 = Color(0xffDCDCDC);
+  static const Color gold = Color(0xffCFA92D);
 }

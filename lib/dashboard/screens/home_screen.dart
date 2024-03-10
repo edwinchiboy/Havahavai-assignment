@@ -15,6 +15,8 @@ import 'package:havahavai_assignment/dashboard/widgets/self_parking_card.dart';
 import 'package:havahavai_assignment/dashboard/widgets/taxi_service_card.dart';
 import 'package:havahavai_assignment/dashboard/widgets/terminal_map_card.dart';
 
+import '../../commons/theme/havahavai_colors.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -55,10 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 36.h,
                                     padding: EdgeInsets.symmetric(
                                         vertical: 8.h, horizontal: 12.w),
-                                    activeColor:
-                                        context.havahavaiColorScheme?.black1,
-                                    inactiveColor:
-                                        context.havahavaiColorScheme?.grey03,
+                                    activeColor: HavahavaiColors.black1,
+                                    inactiveColor: HavahavaiColors.grey03,
                                     borderColor:
                                         context.havahavaiColorScheme?.grey03,
                                     active: activeNavIndex == index,
@@ -73,9 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                         style: HavahavaiTypography
                                             .subheading1Style
                                             .copyWith(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .secondary))))),
+                                                color: activeNavIndex == index
+                                                    ? HavahavaiColors.secondary
+                                                    : HavahavaiColors
+                                                        .black1))))),
                         SizedBox(height: 20.h),
                         const TaxiServiceCard(),
                         SizedBox(height: 20.h),
@@ -89,53 +90,56 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(height: 20.h),
                         const ContactAirportCard(),
                         SizedBox(height: 40.h),
-                        Row(children: [
-                          HavahavaiGestureDetector(
-                              active: false,
-                              radius: 10.r,
-                              height: 48.h,
-                              padding: EdgeInsets.all(16.r),
-                              activeColor: context.havahavaiColorScheme?.black1,
-                              inactiveColor:
-                                  context.havahavaiColorScheme?.black1,
-                              child: Row(children: [
-                                ImageRenderer(
-                                  height: 18.w,
-                                  width: 18.w,
-                                  url: DashBoardImages.transparentRight,
-                                ),
-                                SizedBox(width: 12.w),
-                                Text(HavahavaiString.getDirection,
-                                    style: HavahavaiTypography.heading2Style
-                                        .copyWith(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary))
-                              ])),
-                          SizedBox(width: 16.w),
-                          HavahavaiGestureDetector(
-                              active: false,
-                              radius: 10.r,
-                              height: 48.h,
-                              padding: EdgeInsets.all(16.r),
-                              activeColor: context.havahavaiColorScheme?.black1,
-                              inactiveColor:
-                                  context.havahavaiColorScheme?.black1,
-                              child: Row(children: [
-                                ImageRenderer(
-                                  height: 18.w,
-                                  width: 18.w,
-                                  url: DashBoardImages.transparentRight,
-                                ),
-                                SizedBox(width: 12.w),
-                                Text(HavahavaiString.getDirection,
-                                    style: HavahavaiTypography.heading2Style
-                                        .copyWith(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary))
-                              ]))
-                        ])
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: HavahavaiGestureDetector(
+                                    active: false,
+                                    radius: 10.r,
+                                    height: 48.h,
+                                    padding: EdgeInsets.all(16.r),
+                                    activeColor: HavahavaiColors.black1,
+                                    inactiveColor: HavahavaiColors.black1,
+                                    child: Row(children: [
+                                      ImageRenderer(
+                                        height: 18.w,
+                                        width: 18.w,
+                                        url: DashBoardImages.transparentRight,
+                                      ),
+                                      SizedBox(width: 12.w),
+                                      Text(HavahavaiString.getDirection,
+                                          style: HavahavaiTypography
+                                              .heading2Style
+                                              .copyWith(
+                                                  color: HavahavaiColors
+                                                      .secondary))
+                                    ])),
+                              ),
+                              SizedBox(width: 16.w),
+                              Expanded(
+                                  child: HavahavaiGestureDetector(
+                                      active: false,
+                                      radius: 10.r,
+                                      height: 48.h,
+                                      padding: EdgeInsets.all(16.r),
+                                      activeColor: HavahavaiColors.black1,
+                                      inactiveColor: HavahavaiColors.black1,
+                                      child: Row(children: [
+                                        ImageRenderer(
+                                          height: 18.w,
+                                          width: 18.w,
+                                          url: DashBoardImages.transparentRight,
+                                        ),
+                                        SizedBox(width: 12.w),
+                                        Text(HavahavaiString.getDirection,
+                                            style: HavahavaiTypography
+                                                .heading2Style
+                                                .copyWith(
+                                                    color: HavahavaiColors
+                                                        .secondary))
+                                      ])))
+                            ])
                       ],
                     )))));
   }

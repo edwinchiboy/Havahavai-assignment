@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import 'package:havahavai_assignment/common_data/constants/havahavai_strings.dart';
 import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dart';
 import 'package:havahavai_assignment/commons/theme/typography.dart';
@@ -8,6 +7,7 @@ import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
 import 'package:havahavai_assignment/dashboard/constants/images.dart';
 import 'package:havahavai_assignment/dashboard/models/DetailsModel.dart';
 import 'package:havahavai_assignment/dashboard/widgets/detils_card_colum.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_colors.dart';
 
 class DetailCard extends StatelessWidget {
   const DetailCard({super.key});
@@ -77,12 +77,10 @@ class DetailCard extends StatelessWidget {
                                   Text(HavahavaiString.getDirection,
                                       style: HavahavaiTypography.heading4Style
                                           .copyWith(
-                                              color: context
-                                                  .havahavaiColorScheme?.black1))
+                                              color: HavahavaiColors.black1))
                                 ]),
                                 SizedBox(width: 20.w),
-                                const VerticalDivider(
-                                    color: Colors.black, thickness: 2.0),
+                                const VerticalDivider(),
                                 SizedBox(width: 20.w),
                                 Row(children: [
                                   ImageRenderer(
@@ -93,8 +91,7 @@ class DetailCard extends StatelessWidget {
                                   Text(HavahavaiString.callAirport,
                                       style: HavahavaiTypography.heading4Style
                                           .copyWith(
-                                              color: context
-                                                  .havahavaiColorScheme?.black1))
+                                              color: HavahavaiColors.black1))
                                 ])
                               ])))
                 ])),

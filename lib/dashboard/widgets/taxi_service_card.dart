@@ -36,6 +36,7 @@ class TaxiServiceCard extends StatelessWidget {
                   childAspectRatio: 3 / 2),
               itemCount: taxiServices.length,
               shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return SizedBox(
                     width: 70.w,
@@ -53,7 +54,7 @@ class TaxiServiceCard extends StatelessWidget {
                                 width: 43.w,
                                 height: 14.h,
                                 decoration: BoxDecoration(
-                                  color: context.havahavaiColorScheme?.black1,
+                                  color: HavahavaiColors.black1,
                                   border: Border.all(
                                       width: 1.r,
                                       color: context
@@ -63,8 +64,15 @@ class TaxiServiceCard extends StatelessWidget {
                                       bottomLeft: Radius.circular(4.r),
                                       bottomRight: Radius.circular(4.r)),
                                 ),
+                                child: Center(
+                                  child: Text(
+                                    "Luxury",
+                                    style: HavahavaiTypography.body2Style
+                                        .copyWith(color: HavahavaiColors.gold),
+                                  ),
+                                ),
                               ),
-                              SizedBox(height: 4.h)
+                              SizedBox(height: 12.h)
                             ]),
                           ImageRenderer(url: taxiServices[index]),
                           SizedBox(height: 8.h),
@@ -75,16 +83,14 @@ class TaxiServiceCard extends StatelessWidget {
                                     text: '\$\$',
                                     style: HavahavaiTypography.body1Style
                                         .copyWith(
-                                            color: context
-                                                .havahavaiColorScheme?.grey01),
+                                            color: HavahavaiColors?.grey01),
                                     children: <TextSpan>[
                                       TextSpan(
                                           text: "\$\$\$",
                                           style: HavahavaiTypography.body1Style
                                               .copyWith(
-                                                  color: context
-                                                      .havahavaiColorScheme
-                                                      ?.grey04))
+                                                  color:
+                                                      HavahavaiColors.grey04))
                                     ])),
                           )
                         ])));

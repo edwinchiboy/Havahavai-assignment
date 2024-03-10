@@ -10,6 +10,7 @@ ThemeData havahavaiTheme() {
   return ThemeData(
     fontFamily: uberMoveFontFamily,
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    buttonTheme: const ButtonThemeData(buttonColor: HavahavaiColors.black1),
     colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: HavahavaiColors.primary,
@@ -20,13 +21,13 @@ ThemeData havahavaiTheme() {
         onTertiary: HavahavaiColors.primary,
         error: HavahavaiColors.primary,
         onError: HavahavaiColors.primary,
-        outline: HavahavaiColors.primary,
-        background: HavahavaiColors.primary,
-        onBackground: HavahavaiColors.primary,
-        surface: HavahavaiColors.primary,
-        onSurface: HavahavaiColors.primary,
-        secondaryContainer: HavahavaiColors.primary,
-        primaryContainer: HavahavaiColors.primary),
+        outline: HavahavaiColors.grey01,
+        background: HavahavaiColors.secondary,
+        onBackground: HavahavaiColors.secondary,
+        surface: HavahavaiColors.secondary,
+        onSurface: HavahavaiColors.secondary,
+        secondaryContainer: HavahavaiColors.secondary,
+        primaryContainer: HavahavaiColors.secondary),
     textTheme: TextTheme(
       displayLarge: HavahavaiTypography.heading1Style,
       displayMedium: HavahavaiTypography.heading2Style,
@@ -65,6 +66,7 @@ ThemeData havahavaiDarkTheme() {
     fontFamily: uberMoveFontFamily,
     brightness: Brightness.dark,
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    buttonTheme: const ButtonThemeData(buttonColor: HavahavaiColors.black1),
     colorScheme: const ColorScheme(
         brightness: Brightness.dark,
         primary: HavahavaiColors.primary,

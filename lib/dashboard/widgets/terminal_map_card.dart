@@ -16,42 +16,43 @@ class TerminalMapCard extends StatelessWidget {
     return IntrinsicHeight(
       child: HavahavaiCard(
           elevation: 2.r,
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             SizedBox(height: 4.h),
             Text(HavahavaiString.terminalMap,
                 style: HavahavaiTypography.heading1Style
-                    .copyWith(color: context.havahavaiColorScheme?.black1)),
+                    .copyWith(color: HavahavaiColors?.black1)),
             SizedBox(height: 16.h),
             Row(children: [
               HavahavaiGestureDetector(
                   active: true,
                   padding: EdgeInsets.all(16.r),
                   height: 40.h,
-                  activeColor: context.havahavaiColorScheme?.black1,
-                  inactiveColor: context.havahavaiColorScheme?.grey03,
+                  activeColor: HavahavaiColors.black1,
+                  inactiveColor: HavahavaiColors.grey03,
                   child: Text("T1",
-                      style: HavahavaiTypography.heading2Style.copyWith(
-                          color: Theme.of(context).colorScheme.secondary))),
+                      style: HavahavaiTypography.heading2Style
+                          .copyWith(color: HavahavaiColors.secondary))),
               SizedBox(width: 16.w),
               HavahavaiGestureDetector(
-                  active: true,
+                  active: false,
                   padding: EdgeInsets.all(16.r),
                   height: 40.h,
-                  activeColor: context.havahavaiColorScheme?.black1,
-                  inactiveColor: context.havahavaiColorScheme?.grey03,
+                  activeColor: HavahavaiColors.black1,
+                  inactiveColor: HavahavaiColors.grey03,
                   child: Text("T2",
-                      style: HavahavaiTypography.heading2Style.copyWith(
-                          color: Theme.of(context).colorScheme.secondary))),
+                      style: HavahavaiTypography.heading2Style
+                          .copyWith(color: HavahavaiColors.black1))),
               SizedBox(width: 16.w),
               HavahavaiGestureDetector(
-                  active: true,
+                  active: false,
                   padding: EdgeInsets.all(16.r),
                   height: 40.h,
-                  activeColor: context.havahavaiColorScheme?.black1,
-                  inactiveColor: context.havahavaiColorScheme?.grey03,
+                  activeColor: HavahavaiColors.black1,
+                  inactiveColor: HavahavaiColors.grey03,
                   child: Text("T3",
-                      style: HavahavaiTypography.heading2Style.copyWith(
-                          color: Theme.of(context).colorScheme.secondary)))
+                      style: HavahavaiTypography.heading2Style
+                          .copyWith(color: HavahavaiColors.black1)))
             ]),
             SizedBox(height: 16.w),
             GestureDetector(
@@ -68,19 +69,16 @@ class TerminalMapCard extends StatelessWidget {
                             width: 61.w,
                             height: 30.h,
                             decoration: BoxDecoration(
-                                color: context.havahavaiColorScheme?.black1,
+                                color: HavahavaiColors.black1,
                                 border: Border.all(
-                                    width: 1.r,
-                                    color: context.havahavaiColorScheme?.black1 ??
-                                        HavahavaiColors.black1),
+                                    width: 1.r, color: HavahavaiColors.black1),
                                 borderRadius: BorderRadius.circular(18.r)),
                             child: Center(
                                 child: Text(HavahavaiString.view,
                                     style: HavahavaiTypography.subheading1Style
                                         .copyWith(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary)))))))
+                                            color:
+                                                HavahavaiColors.secondary)))))))
           ])),
     );
   }
