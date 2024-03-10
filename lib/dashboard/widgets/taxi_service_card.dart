@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
-
-import '../../common_data/constants/havahavai_strings.dart';
-import '../../commons/components/cards/havahavai_card.dart';
-import '../../commons/theme/havahavai_colors.dart';
-import '../../commons/theme/typography.dart';
-import '../../commons/widgets/image_renderer.dart';
-import '../constants/images.dart';
+import 'package:havahavai_assignment/common_data/constants/havahavai_strings.dart';
+import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_colors.dart';
+import 'package:havahavai_assignment/commons/theme/typography.dart';
+import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
+import 'package:havahavai_assignment/dashboard/constants/images.dart';
 
 class TaxiServiceCard extends StatelessWidget {
   const TaxiServiceCard({super.key});
@@ -21,11 +20,9 @@ class TaxiServiceCard extends StatelessWidget {
       DashBoardImages.blackLane
     ];
     return HavahavaiCard(
-      elevation: 2.r,
-      padding: EdgeInsets.all(16.r),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        elevation: 2.r,
+        padding: EdgeInsets.all(16.r),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 4.h),
           Text(HavahavaiString.taxiService,
               style: HavahavaiTypography.heading1Style
@@ -33,29 +30,25 @@ class TaxiServiceCard extends StatelessWidget {
           SizedBox(height: 16.h),
           GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 8.r,
-                crossAxisSpacing: 8.r,
-                childAspectRatio: 3 / 2,
-              ),
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 8.r,
+                  crossAxisSpacing: 8.r,
+                  childAspectRatio: 3 / 2),
               itemCount: taxiServices.length,
               shrinkWrap: true,
               itemBuilder: (BuildContext context, int index) {
                 return SizedBox(
-                  width: 70.w,
-                  height: 92.h,
-                  child: HavahavaiCard(
-                    padding: index != taxiServices.length - 1
-                        ? EdgeInsets.all(8.r)
-                        : EdgeInsets.zero,
-                    // margin: EdgeInsets.all(8.r),
+                    width: 70.w,
                     height: 92.h,
-                    elevation: 1.r,
-                    child: Column(
-                      children: [
-                        if (index == taxiServices.length - 1)
-                          Column(
-                            children: [
+                    child: HavahavaiCard(
+                        padding: index != taxiServices.length - 1
+                            ? EdgeInsets.all(8.r)
+                            : EdgeInsets.zero,
+                        height: 92.h,
+                        elevation: 1.r,
+                        child: Column(children: [
+                          if (index == taxiServices.length - 1)
+                            Column(children: [
                               Container(
                                 width: 43.w,
                                 height: 14.h,
@@ -71,41 +64,31 @@ class TaxiServiceCard extends StatelessWidget {
                                       bottomRight: Radius.circular(4.r)),
                                 ),
                               ),
-                              SizedBox(
-                                height: 4.h,
-                              )
-                            ],
-                          ),
-                        ImageRenderer(url: taxiServices[index]),
-                        SizedBox(
-                          height: 8.h,
-                        ),
-                        Center(
-                          child: Text.rich(
-                              textAlign: TextAlign.center,
-                              TextSpan(
-                                  text: '\$\$',
-                                  style: HavahavaiTypography.body1Style
-                                      .copyWith(
-                                          color: context
-                                              .havahavaiColorScheme?.grey01),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: "\$\$\$",
-                                        style: HavahavaiTypography.body1Style
-                                            .copyWith(
-                                                color: context
-                                                    .havahavaiColorScheme
-                                                    ?.grey04))
-                                  ])),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              }),
-        ],
-      ),
-    );
+                              SizedBox(height: 4.h)
+                            ]),
+                          ImageRenderer(url: taxiServices[index]),
+                          SizedBox(height: 8.h),
+                          Center(
+                            child: Text.rich(
+                                textAlign: TextAlign.center,
+                                TextSpan(
+                                    text: '\$\$',
+                                    style: HavahavaiTypography.body1Style
+                                        .copyWith(
+                                            color: context
+                                                .havahavaiColorScheme?.grey01),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: "\$\$\$",
+                                          style: HavahavaiTypography.body1Style
+                                              .copyWith(
+                                                  color: context
+                                                      .havahavaiColorScheme
+                                                      ?.grey04))
+                                    ])),
+                          )
+                        ])));
+              })
+        ]));
   }
 }

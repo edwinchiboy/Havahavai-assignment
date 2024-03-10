@@ -18,9 +18,7 @@ class ImageRenderer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return url.contains(".svg")
-        ? SvgPicture.asset(url, height: height, width: width, fit: BoxFit.cover
-            //colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
-            )
+        ? SvgPicture.asset(url, height: height, width: width, fit: BoxFit.cover)
         : Image.asset(url, height: height, width: width, fit: BoxFit.cover);
   }
 }

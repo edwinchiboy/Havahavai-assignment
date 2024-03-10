@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import 'package:havahavai_assignment/dashboard/widgets/public_transport_card_row.dart';
-
-import '../../common_data/constants/havahavai_strings.dart';
-import '../../commons/components/cards/havahavai_card.dart';
-import '../../commons/theme/typography.dart';
-import '../constants/images.dart';
+import 'package:havahavai_assignment/common_data/constants/havahavai_strings.dart';
+import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dart';
+import 'package:havahavai_assignment/commons/theme/typography.dart';
+import 'package:havahavai_assignment/dashboard/constants/images.dart';
 
 class PublicTransportCard extends StatelessWidget {
   const PublicTransportCard({super.key});
@@ -14,11 +13,9 @@ class PublicTransportCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HavahavaiCard(
-      height: 165.h,
-      padding: EdgeInsets.all(16.r),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        height: 165.h,
+        padding: EdgeInsets.all(16.r),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 4.h),
           Text(HavahavaiString.publicTransport,
               style: HavahavaiTypography.heading1Style
@@ -32,12 +29,9 @@ class PublicTransportCard extends StatelessWidget {
           const Divider(),
           SizedBox(height: 8.h),
           const PublicTransportRow(
-            imageUrl: DashBoardImages.bus,
-            title: HavahavaiString.bus,
-            time: "available 24hrs",
-          ),
-        ],
-      ),
-    );
+              imageUrl: DashBoardImages.bus,
+              title: HavahavaiString.bus,
+              time: "available 24hrs")
+        ]));
   }
 }

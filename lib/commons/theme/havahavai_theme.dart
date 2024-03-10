@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:havahavai_assignment/commons/theme/typography.dart';
-
-import 'havahavai_colors.dart';
-import 'havahavai_colour_scheme.dart';
-import 'havahavia_text_theme.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_colors.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_colour_scheme.dart';
+import 'package:havahavai_assignment/commons/theme/havahavia_text_theme.dart';
 
 ThemeData havahavaiTheme() {
   const uberMoveFontFamily = 'UberMove';

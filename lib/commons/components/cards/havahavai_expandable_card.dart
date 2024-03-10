@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
-
-import '../../../dashboard/constants/images.dart';
-import '../../theme/typography.dart';
-import '../../widgets/image_renderer.dart';
+import 'package:havahavai_assignment/dashboard/constants/images.dart';
+import 'package:havahavai_assignment/commons/theme/typography.dart';
+import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
 
 class HavahavaiExpandableCard extends StatelessWidget {
   final String title;
@@ -24,26 +23,20 @@ class HavahavaiExpandableCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Text(title,
-                style: HavahavaiTypography.heading4Style
-                    .copyWith(color: context.havahavaiColorScheme?.black1)),
-            const Spacer(),
-            GestureDetector(
+        Row(children: [
+          Text(title,
+              style: HavahavaiTypography.heading4Style
+                  .copyWith(color: context.havahavaiColorScheme?.black1)),
+          const Spacer(),
+          GestureDetector(
               onTap: onTap ?? () {},
               child: ImageRenderer(
-                url: isExpanded
-                    ? DashBoardImages.arrowUp
-                    : DashBoardImages.downArrow,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 8.h,
-        ),
-        Visibility(visible: isExpanded, child: content),
+                  url: isExpanded
+                      ? DashBoardImages.arrowUp
+                      : DashBoardImages.downArrow))
+        ]),
+        SizedBox(height: 8.h),
+        Visibility(visible: isExpanded, child: content)
       ],
     );
   }
