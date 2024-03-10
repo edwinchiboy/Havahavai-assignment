@@ -18,7 +18,7 @@ class DashBoardImages {
   static const String twoWeeler = 'assets/images/two_weeler.svg';
   static const String uber = 'assets/images/uber.png';
   static const String yango = 'assets/images/yango.png';
-  static const String dubia = 'assets/images/dubia.png';
+  static const String dubia = 'assets/images/ic_launcher.png';
   static const String blackLane = 'assets/images/black_lane.png';
   static const String electricCar = 'assets/images/electric_car.svg';
   static const String transparentRight = 'assets/images/transparent_direction_right.svg';
