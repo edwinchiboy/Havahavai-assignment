@@ -19,7 +19,8 @@ class Header extends StatelessWidget {
         Text("${HavahavaiString.dubia} .",
             style: context.havahavaiTextTheme?.subheading2
         .copyWith(color: context.havahavaiColorScheme?.grey01)),
-        const Text(" 🇦🇪 ", style: TextStyle(fontSize: 12)),
+        SizedBox(width: 12.w,),
+        const Text("🇦🇪 ", style: TextStyle(fontSize: 12)),
         Text(HavahavaiString.unitedAE,
             style:  context.havahavaiTextTheme?.subheading2
         .copyWith(color: context.havahavaiColorScheme?.grey02)
