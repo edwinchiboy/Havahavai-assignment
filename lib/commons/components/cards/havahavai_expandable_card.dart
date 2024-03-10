@@ -23,18 +23,19 @@ class HavahavaiExpandableCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(children: [
-          Text(title,
-              style: HavahavaiTypography.heading4Style
-                  .copyWith(color: context.havahavaiColorScheme?.black1)),
-          const Spacer(),
-          GestureDetector(
-              onTap: onTap ?? () {},
-              child: ImageRenderer(
-                  url: isExpanded
-                      ? DashBoardImages.arrowUp
-                      : DashBoardImages.downArrow))
-        ]),
+        GestureDetector(
+          onTap: onTap ?? () {},
+          child: Row(children: [
+            Text(title,
+                style: HavahavaiTypography.heading4Style
+                    .copyWith(color: context.havahavaiColorScheme?.black1)),
+            const Spacer(),
+            ImageRenderer(
+                url: isExpanded
+                    ? DashBoardImages.arrowUp
+                    : DashBoardImages.downArrow)
+          ]),
+        ),
         SizedBox(height: 8.h),
         Visibility(visible: isExpanded, child: content)
       ],

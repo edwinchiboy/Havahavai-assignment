@@ -38,66 +38,67 @@ class DetailCard extends StatelessWidget {
                 image: AssetImage(DashBoardImages.dubia), fit: BoxFit.cover)),
         child: Column(children: [
           const Spacer(),
-          HavahavaiCard(
-              height: 130.h,
-              padding: EdgeInsets.zero,
-              margin: EdgeInsets.all(12.r),
-              child: Column(children: [
-                Flexible(
-                    flex: 2,
-                    child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 10.h, horizontal: 16.w),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: List.generate(
-                            details.length,
-                            (index) => DetailsCardColumn(
-                              imageUrl: details[index].imageUrl ?? "",
-                              title: details[index].title ?? "",
-                              subTitle: details[index].subTitle ?? "",
+          IntrinsicHeight(
+            child: HavahavaiCard(
+                padding: EdgeInsets.zero,
+                margin: EdgeInsets.all(12.r),
+                child: Column(children: [
+                  Flexible(
+                      flex: 2,
+                      child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10.h, horizontal: 16.w),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(
+                              details.length,
+                              (index) => DetailsCardColumn(
+                                imageUrl: details[index].imageUrl ?? "",
+                                title: details[index].title ?? "",
+                                subTitle: details[index].subTitle ?? "",
+                              ),
                             ),
-                          ),
-                        ))),
-                const Divider(),
-                Flexible(
-                    flex: 1,
-                    child: Container(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 8.h, horizontal: 20.w),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Row(children: [
-                                ImageRenderer(
-                                    height: 16.r,
-                                    width: 16.r,
-                                    url: DashBoardImages.directionRight),
-                                SizedBox(width: 8.w),
-                                Text(HavahavaiString.getDirection,
-                                    style: HavahavaiTypography.heading4Style
-                                        .copyWith(
-                                            color: context
-                                                .havahavaiColorScheme?.black1))
-                              ]),
-                              SizedBox(width: 20.w),
-                              const VerticalDivider(
-                                  color: Colors.black, thickness: 2.0),
-                              SizedBox(width: 20.w),
-                              Row(children: [
-                                ImageRenderer(
-                                    height: 16.r,
-                                    width: 16.r,
-                                    url: DashBoardImages.callBlue),
-                                SizedBox(width: 8.w),
-                                Text(HavahavaiString.callAirport,
-                                    style: HavahavaiTypography.heading4Style
-                                        .copyWith(
-                                            color: context
-                                                .havahavaiColorScheme?.black1))
-                              ])
-                            ])))
-              ]))
+                          ))),
+                  const Divider(),
+                  Flexible(
+                      flex: 1,
+                      child: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 8.h, horizontal: 20.w),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(children: [
+                                  ImageRenderer(
+                                      height: 16.r,
+                                      width: 16.r,
+                                      url: DashBoardImages.directionRight),
+                                  SizedBox(width: 8.w),
+                                  Text(HavahavaiString.getDirection,
+                                      style: HavahavaiTypography.heading4Style
+                                          .copyWith(
+                                              color: context
+                                                  .havahavaiColorScheme?.black1))
+                                ]),
+                                SizedBox(width: 20.w),
+                                const VerticalDivider(
+                                    color: Colors.black, thickness: 2.0),
+                                SizedBox(width: 20.w),
+                                Row(children: [
+                                  ImageRenderer(
+                                      height: 16.r,
+                                      width: 16.r,
+                                      url: DashBoardImages.callBlue),
+                                  SizedBox(width: 8.w),
+                                  Text(HavahavaiString.callAirport,
+                                      style: HavahavaiTypography.heading4Style
+                                          .copyWith(
+                                              color: context
+                                                  .havahavaiColorScheme?.black1))
+                                ])
+                              ])))
+                ])),
+          )
         ]));
   }
 }

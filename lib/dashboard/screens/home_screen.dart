@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 18.w,
                                   url: DashBoardImages.transparentRight,
                                 ),
-                                SizedBox(width: 16.w),
+                                SizedBox(width: 12.w),
                                 Text(HavahavaiString.getDirection,
                                     style: HavahavaiTypography.heading2Style
                                         .copyWith(
@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 18.w,
                                   url: DashBoardImages.transparentRight,
                                 ),
-                                SizedBox(width: 16.w),
+                                SizedBox(width: 12.w),
                                 Text(HavahavaiString.getDirection,
                                     style: HavahavaiTypography.heading2Style
                                         .copyWith(
