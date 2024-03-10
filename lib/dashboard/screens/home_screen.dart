@@ -57,12 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 36.h,
                                     padding: EdgeInsets.symmetric(
                                         vertical: 8.h, horizontal: 12.w),
-                                    activeColor: HavahavaiColors.black1,
-                                    inactiveColor: HavahavaiColors.grey03,
-                                    borderColor:
+                                    activeColor:
+                                        context.havahavaiColorScheme?.black1,
+                                    inactiveColor:
                                         context.havahavaiColorScheme?.grey03,
                                     active: activeNavIndex == index,
-                                    borderWidth: 1.r,
                                     radius: 18.r,
                                     onTap: () {
                                       setState(() {
@@ -70,13 +69,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                       });
                                     },
                                     child: Text(navTexts[index],
-                                        style: HavahavaiTypography
-                                            .subheading1Style
+                                        style: context
+                                            .havahavaiTextTheme?.subheading1
                                             .copyWith(
                                                 color: activeNavIndex == index
-                                                    ? HavahavaiColors.secondary
-                                                    : HavahavaiColors
-                                                        .black1))))),
+                                                    ? Theme.of(context)
+                                                        .colorScheme
+                                                        .secondary
+                                                    : context
+                                                        .havahavaiColorScheme
+                                                        ?.black1))))),
                         SizedBox(height: 20.h),
                         const TaxiServiceCard(),
                         SizedBox(height: 20.h),
@@ -99,8 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     radius: 10.r,
                                     height: 48.h,
                                     padding: EdgeInsets.all(16.r),
-                                    activeColor: HavahavaiColors.black1,
-                                    inactiveColor: HavahavaiColors.black1,
+                                    activeColor:
+                                        context.havahavaiColorScheme?.black1,
+                                    inactiveColor:
+                                        context.havahavaiColorScheme?.black1,
                                     child: Row(children: [
                                       ImageRenderer(
                                         height: 18.w,
@@ -109,10 +113,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       SizedBox(width: 12.w),
                                       Text(HavahavaiString.getDirection,
-                                          style: HavahavaiTypography
-                                              .heading2Style
+                                          style: context
+                                              .havahavaiTextTheme?.heading2
                                               .copyWith(
-                                                  color: HavahavaiColors
+                                                  color: Theme.of(context)
+                                                      .colorScheme
                                                       .secondary))
                                     ])),
                               ),
@@ -123,8 +128,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       radius: 10.r,
                                       height: 48.h,
                                       padding: EdgeInsets.all(16.r),
-                                      activeColor: HavahavaiColors.black1,
-                                      inactiveColor: HavahavaiColors.black1,
+                                      activeColor:
+                                          context.havahavaiColorScheme?.black1,
+                                      inactiveColor:
+                                          context.havahavaiColorScheme?.black1,
                                       child: Row(children: [
                                         ImageRenderer(
                                           height: 18.w,
@@ -133,10 +140,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         SizedBox(width: 12.w),
                                         Text(HavahavaiString.getDirection,
-                                            style: HavahavaiTypography
-                                                .heading2Style
+                                            style: context
+                                                .havahavaiTextTheme?.heading2
                                                 .copyWith(
-                                                    color: HavahavaiColors
+                                                    color: Theme.of(context)
+                                                        .colorScheme
                                                         .secondary))
                                       ])))
                             ])

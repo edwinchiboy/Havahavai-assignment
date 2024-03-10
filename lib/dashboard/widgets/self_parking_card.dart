@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 import 'package:havahavai_assignment/dashboard/widgets/self_parking_card_row.dart';
 import 'package:havahavai_assignment/common_data/constants/havahavai_strings.dart';
 import 'package:havahavai_assignment/commons/components/cards/havahavai_card.dart';
-import 'package:havahavai_assignment/commons/theme/typography.dart';
 import 'package:havahavai_assignment/commons/widgets/getsture_detector.dart';
 import 'package:havahavai_assignment/dashboard/constants/images.dart';
 import 'package:havahavai_assignment/dashboard/models/DetailsModel.dart';
-import 'package:havahavai_assignment/commons/theme/havahavai_colors.dart';
 
 class SelfParkingCard extends StatelessWidget {
   const SelfParkingCard({super.key});
@@ -34,29 +33,29 @@ class SelfParkingCard extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 4.h),
           Text(HavahavaiString.selfparking,
-              style: HavahavaiTypography.heading1Style
-                  .copyWith(color: HavahavaiColors.black1)),
+              style: context.havahavaiTextTheme?.heading1
+                  .copyWith(color: context.havahavaiColorScheme?.black1)),
           SizedBox(height: 16.h),
           Row(children: [
             HavahavaiGestureDetector(
                 active: true,
                 padding: EdgeInsets.all(16.r),
                 height: 40.h,
-                activeColor: HavahavaiColors.black1,
-                inactiveColor: HavahavaiColors.grey03,
+                activeColor: context.havahavaiColorScheme?.black1,
+                inactiveColor: context.havahavaiColorScheme?.grey03,
                 child: Text("T1",
-                    style: HavahavaiTypography.heading2Style
-                        .copyWith(color: HavahavaiColors.secondary))),
+                    style: context.havahavaiTextTheme?.heading2.copyWith(
+                        color: Theme.of(context).colorScheme.secondary))),
             SizedBox(width: 16.w),
             HavahavaiGestureDetector(
                 active: false,
                 padding: EdgeInsets.all(16.r),
                 height: 40.h,
-                activeColor: HavahavaiColors.black1,
-                inactiveColor: HavahavaiColors.grey03,
+                activeColor: context.havahavaiColorScheme?.black1,
+                inactiveColor: context.havahavaiColorScheme?.grey03,
                 child: Text("T2",
-                    style: HavahavaiTypography.heading2Style
-                        .copyWith(color: HavahavaiColors.black1)))
+                    style: context.havahavaiTextTheme?.heading2
+                        .copyWith(color: context.havahavaiColorScheme?.black1)))
           ]),
           SizedBox(height: 16.h),
           Expanded(

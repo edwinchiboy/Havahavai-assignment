@@ -25,7 +25,7 @@ class TaxiServiceCard extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 4.h),
           Text(HavahavaiString.taxiService,
-              style: HavahavaiTypography.heading1Style
+              style: context.havahavaiTextTheme?.heading1
                   .copyWith(color: context.havahavaiColorScheme?.black1)),
           SizedBox(height: 16.h),
           GridView.builder(
@@ -64,35 +64,36 @@ class TaxiServiceCard extends StatelessWidget {
                                       bottomLeft: Radius.circular(4.r),
                                       bottomRight: Radius.circular(4.r)),
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    "Luxury",
-                                    style: HavahavaiTypography.body2Style
-                                        .copyWith(color: HavahavaiColors.gold),
-                                  ),
-                                ),
+                                // child: Center(
+                                //     child: Text("Luxury",
+                                //         style: context.havahavaiTextTheme?.body2
+                                //             .copyWith(
+                                //                 color: HavahavaiColors.gold))),
                               ),
                               SizedBox(height: 12.h)
                             ]),
                           ImageRenderer(url: taxiServices[index]),
                           SizedBox(height: 8.h),
                           Center(
-                            child: Text.rich(
-                                textAlign: TextAlign.center,
-                                TextSpan(
-                                    text: '\$\$',
-                                    style: HavahavaiTypography.body1Style
-                                        .copyWith(
-                                            color: HavahavaiColors?.grey01),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                          text: "\$\$\$",
-                                          style: HavahavaiTypography.body1Style
-                                              .copyWith(
-                                                  color:
-                                                      HavahavaiColors.grey04))
-                                    ])),
-                          )
+                              child: Text.rich(
+                                  textAlign: TextAlign.center,
+                                  TextSpan(
+                                      text: '\$\$',
+                                      style: context.havahavaiTextTheme?.body1
+                                          .copyWith(
+                                              color: context
+                                                  .havahavaiColorScheme
+                                                  ?.grey01),
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                            text: "\$\$\$",
+                                            style: context
+                                                .havahavaiTextTheme?.body1
+                                                .copyWith(
+                                                    color: context
+                                                        .havahavaiColorScheme
+                                                        ?.grey04))
+                                      ])))
                         ])));
               })
         ]));

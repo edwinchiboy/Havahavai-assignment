@@ -27,8 +27,8 @@ class HavahavaiExpandableCard extends StatelessWidget {
           onTap: onTap ?? () {},
           child: Row(children: [
             Text(title,
-                style: HavahavaiTypography.heading4Style
-                    .copyWith(color: context.havahavaiColorScheme?.black1)),
+                style: context.havahavaiTextTheme?.heading4.copyWith(
+                    color: context.havahavaiColorScheme?.black1)),
             const Spacer(),
             ImageRenderer(
                 url: isExpanded

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:havahavai_assignment/commons/theme/havahavai_theme.dart';
 
 import 'package:havahavai_assignment/commons/theme/typography.dart';
 import 'package:havahavai_assignment/commons/widgets/image_renderer.dart';
@@ -23,14 +24,15 @@ class SelfParkingRow extends StatelessWidget {
       ImageRenderer(height: 14.h, width: 24.w, url: imageUrl),
       SizedBox(width: 16.w),
       Text(title,
-          style: HavahavaiTypography.heading4Style
-              .copyWith(color: HavahavaiColors.grey01)),
+          style: context.havahavaiTextTheme?.heading4
+              .copyWith(color: context.havahavaiColorScheme?.grey01)),
       const Spacer(),
       Text(charge,
-          style: HavahavaiTypography.heading4Style
-              .copyWith(color: HavahavaiColors.black1)),
+          style: context.havahavaiTextTheme?.heading4
+              .copyWith(color: context.havahavaiColorScheme?.black1)),
       SizedBox(width: 4.w),
-      Icon(Icons.info_outline, size: 11.r, color: HavahavaiColors.grey01)
+      Icon(Icons.info_outline,
+          size: 11.r, color: context.havahavaiColorScheme?.grey01)
     ]);
   }
 }
