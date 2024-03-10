@@ -70,7 +70,7 @@ ThemeData havahavaiDarkTheme() {
     buttonTheme: const ButtonThemeData(buttonColor: HavahavaiColors.black1),
     colorScheme: const ColorScheme(
         brightness: Brightness.dark,
-        primary: HavahavaiColors.primary,
+        primary: HavahavaiColors.secondary,
         onPrimary: HavahavaiColors.primary,
         secondary: HavahavaiColors.primary,
         onSecondary: HavahavaiColors.primary,
@@ -97,11 +97,11 @@ ThemeData havahavaiDarkTheme() {
   ).copyWith(
     extensions: <ThemeExtension<dynamic>>[
       const HavahavaiColorScheme(
-          grey01: HavahavaiColors.grey01,
-          grey02: HavahavaiColors.grey02,
-          grey03: HavahavaiColors.grey03,
-          grey04: HavahavaiColors.grey04,
-          black1: HavahavaiColors.black1,
+          grey01: HavahavaiColors.grey04,
+          grey02: HavahavaiColors.grey03,
+          grey03: HavahavaiColors.grey02,
+          grey04: HavahavaiColors.grey01,
+          black1: HavahavaiColors.secondary,
           blue01: HavahavaiColors.blue01),
       HavahavaiTextTheme(
           heading1: HavahavaiTypography.heading1Style,
